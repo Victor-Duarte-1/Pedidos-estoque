@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Materiais</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+    <title>Pedido Estoque</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -12,7 +12,7 @@
         <ul id="resultList" class="result-list"></ul>
         <h3>Materiais Adicionados:</h3>
         <ul id="addedList" class="added-list"></ul>
-        <button id="generateData">Gerar Dados</button>
+        <button id="generateData" class="generate-button">Gerar Dados</button>
     </div>
     <!-- Modal -->
     <div id="dataModal" class="modal">
@@ -20,12 +20,12 @@
             <span class="close-button" id="closeModal">&times;</span>
             <h2>Dados dos Pedidos</h2>
             <div id="dataContainer"></div>
-            <button id="copyButton">Copiar Dados</button>
+            <button id="copyButton" class="copy-button">Copiar Dados</button>
         </div>
     </div>
     <footer>
-        © 2024 Victor Duarte. Todos os direitos reservados.
+        © 2024 Dirad. Todos os direitos reservados.
     </footer>
-    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
