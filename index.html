@@ -1,34 +1,39 @@
-<form id="myForm">
-  <input type="text" name="nome" placeholder="Nome" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="tel" name="telefone" placeholder="Telefone" required>
-  <button type="submit">Gerar Dados</button>
-</form>
-
-<script>
-  document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    var formData = new FormData(this);
-    var object = {};
-    formData.forEach((value, key) => { object[key] = value });
-    var json = JSON.stringify(object);
-
-    fetch('https://script.google.com/macros/s/AKfycbwyTAivIs_I5TdkPIgqkwKlOoQd6AlWyJaEtIRITJYHoFkonxkw9VAcC9_Lq3RTg2y0/exec', { // Sua URL do Web App
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: json
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-      alert('Dados enviados com sucesso!');
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      alert('Ocorreu um erro ao enviar os dados.');
-    });
-  });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Estoque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="searchBar" class="search-bar" placeholder="Buscar materiais...">
+        <ul id="resultList" class="result-list"></ul>
+        <h3>Materiais Adicionados:</h3>
+        <ul id="addedList" class="added-list"></ul>
+        
+        <!-- Formulário para envio de dados -->
+        <form id="dataForm">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <button type="submit" class="generate-button">Gerar Dados</button>
+        </form>
+        
+        <!-- Modal -->
+        <div id="dataModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="closeModal">&times;</span>
+                <h2>Dados dos Pedidos</h2>
+                <div id="dataContainer"></div>
+                <button id="copyButton" class="copy-button">Copiar Dados</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 2024 Dirad. Todos os direitos reservados.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
