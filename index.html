@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido Estoque</title>
+    <title>Pedidos Estoque</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,23 +12,15 @@
         <ul id="resultList" class="result-list"></ul>
         <h3>Materiais Adicionados:</h3>
         <ul id="addedList" class="added-list"></ul>
-        
-        <!-- Formulário para envio de dados -->
-        <form id="dataForm">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="telefone" placeholder="Telefone" required>
-            <button type="submit" class="generate-button">Gerar Dados</button>
-        </form>
-        
-        <!-- Modal -->
-        <div id="dataModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button" id="closeModal">&times;</span>
-                <h2>Dados dos Pedidos</h2>
-                <div id="dataContainer"></div>
-                <button id="copyButton" class="copy-button">Copiar Dados</button>
-            </div>
+        <button id="generateData" class="generate-button">Gerar Dados</button>
+    </div>
+    <!-- Modal -->
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2>Dados dos Pedidos</h2>
+            <div id="dataContainer"></div>
+            <button id="copyButton" class="copy-button">Copiar Dados</button>
         </div>
     </div>
     <footer>
