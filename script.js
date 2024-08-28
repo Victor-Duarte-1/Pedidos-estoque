@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para buscar o arquivo JSON do GitHub
     function fetchMaterials() {
-        fetch('https://github.com/Victor-Duarte-1/Pedidos-estoque/blob/main/materials.json')
+        fetch('https://raw.githubusercontent.com/Dirad-01/Pedidos-estoque/main/materials.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
